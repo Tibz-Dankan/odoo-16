@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <record id="view_national_id_form" model="ir.ui.view">
         <field name="name">national.id.form</field>
         <field name="model">national.id</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <group>
+                        <field name="surname"/>
+                        <field name="lastname"/>
+                        <field name="gender"/>
+                        <field name="age"/>
+                        <field name="district"/>
+                        <field name="sub_county"/>
+                        <field name="parish"/>
+                        <field name="village"/>
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -17,15 +26,22 @@
         <field name="model">national.id</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="surname"/>
+                <field name="lastname"/>
+                <field name="gender"/>
+                <field name="age"/>
+                <field name="district"/>
+                <field name="sub_county"/>
+                <field name="parish"/>
+                <field name="village"/>
             </tree>
         </field>
     </record>
 
     <record id="action_national_id" model="ir.actions.act_window">
-            <field name="name">Apply</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">national.id</field>
-            <field name="view_mode">tree,form</field>
+        <field name="name">Applications</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">national.id</field>
+        <field name="view_mode">tree,form</field>
     </record>
-
 </odoo>
