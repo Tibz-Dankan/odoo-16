@@ -1,26 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-        <!-- Menu Items -->
-    <data>
-        <!-- Parent Menu -->
-        <menuitem id="menu_national_id" name="National ID" sequence="10"/>
-        <!-- Child Menu -->
-        <menuitem id="menu_register_national_id" parent="menu_national_id" name="National ID" sequence="10"/>
-    </data>
-
-    <!-- Views -->
-    <data>
-        <!-- Default Form View -->
-        <record id="view_national_id_form" model="ir.ui.view">
-            <field name="name">national.id.form</field>
-            <field name="model">national.id</field> <!-- Replace 'your.model.name' with the actual model name -->
-            <field name="arch" type="xml">
-                <form>
-                    <!-- Define your form layout here -->
-                    <!-- Add fields, buttons, and other form components -->
-                </form>
-            </field>
-        </record>
-    </data>
-
-</odoo>
+  <odoo>
+        <menuitem id="menu_national_id" name="National ID" sequence="10" action="action_national_id"/>
+  </odoo>

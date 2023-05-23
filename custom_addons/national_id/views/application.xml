@@ -22,12 +22,10 @@
     </record>
 
     <record id="action_national_id" model="ir.actions.act_window">
-            <field name="name">National ID Apply</field>
+            <field name="name">Apply</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">national.id</field>
-            <field name="view_mode">tree, form</field>
+            <field name="view_mode">tree,form</field>
     </record>
-
-    <menuitem  id="menu_register_national_id_form" name="Menu National ID" parent="menu_register_national_id" action="action_national_id" sequence="10"/>
 
 </odoo>
