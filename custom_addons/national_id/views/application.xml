@@ -39,7 +39,7 @@
     </record>
 
     <record id="action_national_id" model="ir.actions.act_window">
-        <field name="name">Applications</field>
+        <field name="name">Applicants</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">national.id</field>
         <field name="view_mode">tree,form</field>
