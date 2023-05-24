@@ -17,6 +17,7 @@ class NationalId(models.Model):
      stage = fields.Selection([("draft", "Application"), ("review", "Review"), ("approved", "Approved")],
                                  string="Stage", default="draft")
      progress = fields.Float(string="Progress", compute="_compute_progress", store=True)
+     chatter_log = fields.Text(string="Chatter Log", readonly=True)
 
      @api.depends('stage')
      def _compute_progress(self):
@@ -28,7 +29,6 @@ class NationalId(models.Model):
                 elif record.stage == 'approved':
                     record.progress = 100.0
 
-
      def write(self, vals):
         result = super(NationalId, self).write(vals)
         for record in self:
@@ -39,3 +39,9 @@ class NationalId(models.Model):
                     log_message = record.chatter_log + log_message
                 record.chatter_log = log_message
         return result
+
+     def action_review(self):
+         self.write({'stage': 'review'})
+
+     def action_approve(self):
+         self.write({'stage': 'approved'})
