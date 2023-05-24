@@ -18,6 +18,11 @@ class NationalId(models.Model):
                                  string="Stage", default="draft")
      progress = fields.Float(string="Progress", compute="_compute_progress", store=True)
      chatter_log = fields.Text(string="Chatter Log", readonly=True)
+     _state_buttons = {
+         'draft': {'string': 'Application', 'color': 'blue'},
+         'review': {'string': 'Review', 'color': 'orange'},
+         'approved': {'string': 'Approved', 'color': 'green'},
+     }
 
      @api.depends('stage')
      def _compute_progress(self):
@@ -28,6 +33,24 @@ class NationalId(models.Model):
                     record.progress = 50.0
                 elif record.stage == 'approved':
                     record.progress = 100.0
+
+     @api.onchange('progress')
+     def _onchange_progress(self):
+         if self.progress < 50.0:
+             self.stage = 'draft'
+         elif self.progress < 100.0:
+             self.stage = 'review'
+         else:
+             self.stage = 'approved'
+
+     @api.model
+     def _get_progress_color(self, progress):
+         if progress < 50.0:
+             return 'orange'
+         elif progress < 100.0:
+             return 'blue'
+         else:
+             return 'green'
 
      def write(self, vals):
         result = super(NationalId, self).write(vals)

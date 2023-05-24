@@ -8,7 +8,7 @@
                 <sheet>
                     <group>
                         <field name="stage" widget="statusbar"/>
-                        <field name="progress" widget="progressbar"/>
+                        <field name="progress" widget="progressbar" options="{'color': 'get_progress_color'}"/>
                         <field name="surname"/>
                         <field name="lastname"/>
                         <field name="gender"/>
@@ -19,8 +19,8 @@
                         <field name="village"/>
                     </group>
                     <group>
-                         <button name="action_review" string="Review" type="object" class="btn-primary"/>
-                         <button name="action_approve" string="Approve" type="object" class="btn-primary"/>
+                        <button name="action_review" string="Finish Review" type="object" class="oe_highlight" attrs="{'invisible': [('stage', '!=', 'draft')]}"/>
+                        <button name="action_approve" string="Approve" type="object" class="oe_highlight" attrs="{'invisible': [('stage', '!=', 'review')]}"/>
                     </group>
                 </sheet>
             </form>
@@ -40,8 +40,8 @@
                 <field name="sub_county"/>
                 <field name="parish"/>
                 <field name="village"/>
-                <field name="stage" widget="statusbar"/>
-                <field name="progress" widget="progressbar"/>
+                <field name="stage" widget="statusbar" />
+                <field name="progress" widget="progressbar" options="{'color': 'get_progress_color'}"/>
             </tree>
         </field>
     </record>

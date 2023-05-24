@@ -12,4 +12,10 @@
         'views/menu.xml',
         'views/application.xml'
       ]
+    ,
+    'assets': {
+        'web.assets_frontend': [
+            'national_id/static/css/custom_styles.css',
+        ],
+    },
 }
