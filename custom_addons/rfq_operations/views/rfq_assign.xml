@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <record id="purchase_order_form_view_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit</field>
+            <field name="model">purchase.order</field>
+<!--            <field name="inherit_id" ref="purchase.purchase_order_form_view"/>-->
+            <field name="arch" type="xml">
+<!--                <field name="partner_id" position="after">-->
+<!--                    <field name="vendor_ids" mode="tree,kanban" widget="many2many_tags" string="Vendors">-->
+<!--                        <tree editable="bottom">-->
+<!--                            <field name="name"/>-->
+<!--                        </tree>-->
+<!--                    </field>-->
+<!--                </field>-->
+                <tree>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_rfq_operations" model="ir.actions.act_window">
+        <field name="name">Assign RFQ</field>
+        <field name="type">ir.actions.act_window</field>
+           <field name="res_model">purchase.order</field>
+        <field name="view_mode">tree,kanban</field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <odoo>
+    <data>
+<!--        <menuitem id="menu_rfq_operations" name="RFQ Operations" sequence="11" action="action_rfq_operations"/>-->
+        <menuitem id="menu_rfq_operations" name="RFQ Operations" sequence="11"/>
+    </data>
+  </odoo>

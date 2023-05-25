@@ -5,11 +5,11 @@
     'version': '1.0',
     'category': 'Purchases',
     'summary': 'Adds the ability to assign RFQ to several vendors',
-    'author': 'Your Name',
+    'author': 'Tibesigwa Dankan',
     'depends': ['purchase'],
     'data': [
         'views/menu.xml',
-        'views/rfq_operations.xml',
+        'views/rfq_assign.xml',
     ],
     'installable': True,
     'application': False,
