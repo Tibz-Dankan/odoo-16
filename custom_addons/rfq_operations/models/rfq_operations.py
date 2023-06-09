@@ -8,8 +8,7 @@ class RFQOperations(models.Model):
     vendor_ids = fields.One2many('res.partner', 'rfq_id', string='Vendors')
 
 
-
-class ResPartner(models.Model):
+class RFQAssigned(models.Model):
     _inherit = 'res.partner'
 
-    rfq_id = fields.Many2one('rfq.operations', string='RFQ Operations')
+    rfq_id = fields.Many2one('purchase.order', string='RFQ Assigned')
