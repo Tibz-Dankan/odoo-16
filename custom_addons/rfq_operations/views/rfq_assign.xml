@@ -1,9 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <record id="purchase_order_form" model="ir.ui.view">
-            <field name="name">purchase.order.form</field>
+
+    <data>
+
+<!--  TODO: view (Tree view) RFQs -->
+<!--  TODO: view (form view) RFQs -->
+<!--  notebook and ability to assign RFQ to vendors -->
+
+
+<!--  Tree view purchase order inherit    -->
+       <record id="purchase_order_inherit_tree" model="ir.ui.view">
+            <field name="name">purchase.order.inherit.tree</field>
             <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+            <field name="arch" type="xml">
+                   <tree string="Purchase Order">
+                    <field name="priority" optional="show" widget="priority" nolabel="1"/>
+                    <field name="partner_ref" optional="hide"/>
+                    <field name="name" string="Reference" readonly="1" decoration-info="state in ('draft','sent')"/>
+                    <field name="date_order" invisible="not context.get('quotation_only', False)" optional="show"/>
+                    <field name="date_approve" invisible="context.get('quotation_only', False)" optional="show"/>
+                    <field name="partner_id" readonly="1"/>
+                    <field name="company_id" readonly="1" options="{'no_create': True}"
+                        groups="base.group_multi_company" optional="show"/>
+                    <field name="user_id" optional="show"/>
+                    <field name="origin" optional="show"/>
+                    <field name="amount_untaxed" sum="Total Untaxed amount" string="Untaxed" widget="monetary" optional="hide"/>
+                    <field name="amount_total" sum="Total amount" widget="monetary" optional="show"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="state" optional="show"/>
+                    <field name="date_planned" invisible="context.get('quotation_only', False)" optional="show"/>
+                    <field name="invoice_status" invisible="context.get('quotation_only', False)" optional="hide"/>
+                    <field name="activity_exception_decoration" widget="activity_exception"/>
+                </tree>
+            </field>
+        </record>
+
+<!--    Form view purchase order inherit    -->
+          <record id="purchase_order_inherit_form" model="ir.ui.view">
+            <field name="name">purchase.order.inherit.form</field>
+            <field name="model">purchase.order</field>
+              <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="arch" type="xml">
                 <form string="Purchase Order" class="o_purchase_order">
                 <header>
@@ -269,5 +307,23 @@
                 </form>
             </field>
         </record>
+
+
+
+
+        <record id="action_rfq_operations" model="ir.actions.act_window">
+            <field name="name">RFQ Operations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_rfq_operations"
+            name="RFQ operations"
+            sequence="1"
+            action="action_rfq_operations"
+      />
+
+    </data>
 
 </odoo>

@@ -11,8 +11,7 @@
     'license': 'LGPL-3',
     'data': [
          'security/ir.model.access.csv',
-        'views/menu.xml',
-        'views/rfq_assign.xml',
+         'views/rfq_assign.xml',
     ],
     'installable': True,
     'application': False,
