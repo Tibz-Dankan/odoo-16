@@ -16,6 +16,8 @@ class NationalId(models.Model):
      village = fields.Char(string="Village", required=True)
      stage = fields.Selection([("draft", "Application"), ("review", "Review"), ("approved", "Approved")],
                                  string="Stage", default="draft")
+     lc_ref_letter = fields.Binary(string="LC Letter")
+     letter_name = fields.Char(string="LC Letter Name")
      progress = fields.Float(string="Progress", compute="_compute_progress", store=True)
      chatter_log = fields.Text(string="Chatter Log", readonly=True)
      _state_buttons = {
@@ -23,6 +25,7 @@ class NationalId(models.Model):
          'review': {'string': 'Review', 'color': 'orange'},
          'approved': {'string': 'Approved', 'color': 'green'},
      }
+     chatter_log = fields.Text(string="Chatter Log", readonly=True)
 
      @api.depends('stage')
      def _compute_progress(self):

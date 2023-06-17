@@ -8,15 +8,23 @@
                 <sheet>
                     <group>
                         <field name="stage" widget="statusbar"/>
-                        <field name="progress" widget="progressbar" options="{'color': 'get_progress_color'}"/>
-                        <field name="surname"/>
-                        <field name="lastname"/>
-                        <field name="gender"/>
-                        <field name="age"/>
-                        <field name="district"/>
-                        <field name="sub_county"/>
-                        <field name="parish"/>
-                        <field name="village"/>
+                        <field name="progress" widget="progressbar" options="{'color': 'get_progress_color(progress)'}"/>
+                       <group>
+                            <field name="surname"/>
+                            <field name="lastname"/>
+                            <field name="gender"/>
+                            <field name="age"/>
+                       </group>
+                        <group>
+                            <field name="district"/>
+                            <field name="sub_county"/>
+                            <field name="parish"/>
+                            <field name="village"/>
+                        </group>
+                        <group>
+                            <field name="lc_ref_letter" filename="letter_name"/>
+                            <field name="letter_name" invisible="1" />
+                        </group>
                     </group>
                     <group>
                         <button name="action_review" string="Finish Review" type="object" class="oe_highlight" attrs="{'invisible': [('stage', '!=', 'draft')]}"/>
@@ -41,7 +49,7 @@
                 <field name="parish"/>
                 <field name="village"/>
                 <field name="stage" widget="statusbar" />
-                <field name="progress" widget="progressbar" options="{'color': 'get_progress_color'}"/>
+                <field name="progress" widget="progressbar" options="{'color': 'get_progress_color(progress)'}"/>
             </tree>
         </field>
     </record>
