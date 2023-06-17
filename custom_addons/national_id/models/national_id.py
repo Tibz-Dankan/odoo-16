@@ -18,6 +18,7 @@ class NationalId(models.Model):
                                  string="Stage", default="draft")
      lc_ref_letter = fields.Binary(string="LC Letter")
      letter_name = fields.Char(string="LC Letter Name")
+     image = fields.Image(string="Image", max_width=100, max_height=100, resolution="True")
      progress = fields.Float(string="Progress", compute="_compute_progress", store=True)
      chatter_log = fields.Text(string="Chatter Log", readonly=True)
      _state_buttons = {
@@ -46,15 +47,24 @@ class NationalId(models.Model):
          else:
              self.stage = 'approved'
 
-     @api.model
-     def _get_progress_color(self, progress):
-         if progress < 50.0:
-             return 'orange'
-         elif progress < 100.0:
-             return 'blue'
-         else:
-             return 'green'
-
+     # @api.model
+     # def _get_progress_color(self, progress):
+     #     if progress < 50.0:
+     #         return 'orange'
+     #     elif progress < 100.0:
+     #         return 'blue'
+     #     else:
+     #         return 'green'
+     @api.depends('stage')
+     def _get_progress_color(self):
+         for record in self:
+             if record.stage == 'draft':
+                 # record.progress = 0.0
+                 return 'orange'
+             elif record.stage == 'review':
+                 return 'blue'
+             elif record.stage == 'approved':
+                 return 'green'
      def write(self, vals):
         result = super(NationalId, self).write(vals)
         for record in self:
