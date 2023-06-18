@@ -14,8 +14,9 @@
       ]
     ,
     'assets': {
-        'web.assets_frontend': [
-            'national_id/static/css/custom_styles.css',
+        'web.assets_backend': [
+            'national_id/static/src/css/progress_bar.css',
+            'national_id/static/src/js/progress_bar.js',
         ],
     },
 }
