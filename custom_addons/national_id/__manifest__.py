@@ -1,5 +1,5 @@
 {
-    'name': 'National ID Application',
+    'name': 'national_id',
     'author': 'Tibesigwa Dankan',
     'version': '1.2',
     'category': 'Services/national_id',
@@ -10,7 +10,8 @@
       'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',
-        'views/application.xml'
+        'views/application.xml',
+        'views/apply.xml'
       ]
     ,
     'assets': {

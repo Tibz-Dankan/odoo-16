@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<doo>
+
+<!--    <record model="website.menu">-->
+<!--        <field name="name">National ID Form</field>-->
+<!--        <field name="url">/national_id/apply_form</field>-->
+<!--        <field name="parent_id" ref="website.main_menu"/>-->
+<!--        <field name="sequence">55</field>-->
+<!--    </record>-->
+
+<!--    <template id="apply_form">-->
+<!--        <t t-call="website.layout" name="national id">-->
+<!--            My first web page on odoo-->
+<!--        </t>-->
+<!--    </template>-->
+
+
+        <!-- APPLICATION FORM   -->
+<!--        <template id="apply_form">-->
+<!--        <t t-call="website.layout" name="national id">-->
+<!--            <div id="wrap">-->
+<!--                <div class="oe_structure">-->
+<!--                     <div class="container">-->
+<!--                        <form role="form" action="/national_id/create_applicant/" method="POST">-->
+<!--                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>-->
+<!--                         <div class="form-group">-->
+<!--                            <label for="surname" class="control-label">Surname</label>-->
+<!--                            <input type="text" name="surname" id="surname" t-att-value="surname"-->
+<!--                                   class="form-control" placeholder="Your surname" required="required"/>-->
+<!--                         </div>-->
+<!--                         <div class="form-group">-->
+<!--                            <label for="lastname" class="control-label">Surname</label>-->
+<!--                            <input type="text" name="lastname" id="lastname" t-att-value="lastname"-->
+<!--                                   class="form-control" placeholder="Your lastname" required="required"/>-->
+<!--                         </div>-->
+<!--                         <div class="form-group">-->
+<!--                            <label for="gender" class="control-label">Surname</label>-->
+<!--                            <input type="text" name="gender" id="gender" t-att-value="gender"-->
+<!--                                   class="form-control" placeholder="Your lastname" required="required"/>-->
+<!--                         </div>-->
+<!--                          <div class="form-group">-->
+<!--                            <label for="age" class="control-label">Age</label>-->
+<!--                            <input type="text" name="age" id="age" t-att-value="age"-->
+<!--                                   class="form-control" placeholder="Your age" required="required"/>-->
+<!--                         </div>-->
+<!--                         <div class="form-group">-->
+<!--                            <label for="district" class="control-label">District</label>-->
+<!--                            <input type="text" name="district" id="district" t-att-value="district"-->
+<!--                                   class="form-control" placeholder="Your district" required="required"/>-->
+<!--                         </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="sub_county" class="control-label">Sub-county</label>-->
+<!--                            <input type="text" name="sub_county" id="sub_county" t-att-value="sub_county"-->
+<!--                                   class="form-control" placeholder="Your sub_county" required="required"/>-->
+<!--                         </div>-->
+<!--                         <div class="form-group">-->
+<!--                            <label for="parish" class="control-label">Age</label>-->
+<!--                            <input type="text" name="parish" id="parish" t-att-value="parish"-->
+<!--                                   class="form-control" placeholder="Your parish" required="required"/>-->
+<!--                         </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="village" class="control-label">Age</label>-->
+<!--                            <input type="text" name="village" id="village" t-att-value="village"-->
+<!--                                   class="form-control" placeholder="Your village" required="required"/>-->
+<!--                         </div>-->
+<!--                        </form>-->
+<!--                     </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </t>-->
+<!--    </template>-->
+
+<!--    <record id="application_submit_success" model="website.page">-->
+<!--        <field name="name">Submit Success</field>-->
+<!--        <field name="type">qweb</field>-->
+<!--        <field name="url">/national_id/form_submit_success</field>-->
+<!--&lt;!&ndash;        <field name="website_published">True</field>&ndash;&gt;-->
+<!--        <field name="key">national_id.form_submit_success</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <t t-call="website.layout">-->
+<!--                <div id="wrap">-->
+<!--                    <div class="container">-->
+<!--                        <h1>Application submitted successfully</h1>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-lg-8">-->
+<!--                                  <div class="alert alert-success" role="status">-->
+<!--                                      Your application has been submitted successfully-->
+<!--                                  </div>-->
+<!--                                  <p>Administrators are going to review your application</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </t>-->
+<!--        </field>-->
+<!--    </record>-->
+
+</doo>
